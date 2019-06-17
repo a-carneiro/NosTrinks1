@@ -1,0 +1,239 @@
+﻿<!DOCTYPE html>
+<html>
+<title>NosTrinks</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/loading.css">
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.0.min.js"></script>
+<style>
+    html, body, h1, h2, h3, h4, h5 {
+        font-family: "Raleway", sans-serif
+    }
+</style>
+<body class="w3-light-grey">
+
+    <!-- Top container -->
+    <div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
+        <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
+        <span class="w3-bar-item w3-right">Logo</span>
+    </div>
+
+    <!-- Sidebar/menu -->
+    <nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar">
+        <div class="w3-container">
+            <h5>Dashboard</h5>
+        </div>
+        <div class="w3-bar-block">
+            <a href="index.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bank fa-fw"></i>  Home</a>
+            <a href="GerenciarFuncionario.html" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-users fa-fw"></i>  Cadastrar funcionário</a>
+            <a href="AdicionarServico.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-diamond fa-fw"></i>  Adicionar servico</a>
+            <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cog fa-fw"></i>  Settings</a><br><br>
+        </div>
+    </nav>
+
+
+    <!-- Overlay effect when opening sidebar on small screens -->
+    <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+    <!-- !PAGE CONTENT! -->
+    <div class="w3-main" style="margin-left:300px;margin-top:43px;">
+
+        <!-- Header -->
+        <header class="w3-container" style="padding-top:22px">
+            <h5><b><i class="fa fa-user"></i> Cadastrar funcionário</b></h5>
+        </header>
+
+
+
+
+
+        <div class="w3-container">
+            <p><input id="CadastroNome" class="w3-input w3-border" type="text" placeholder="Name" name="Name" required></p>
+            <p><input id="CadastroEmail" class="w3-input w3-border" type="text" placeholder="Email" name="Email" required></p>
+            <p><input id="CadastroSenha" class="w3-input w3-border" type="password" placeholder="Senha" name="Senha" required></p>
+            <p>
+                <select id="CadastroRole" class="w3-input w3-border" placeholder="Função" name="Função" required>
+                    <option value="">...</option>
+                </select>
+            </p>
+            <button id="submit" type="submit" class="w3-button w3-block w3-black">
+                <div id="cadastrarButtonText">cadastrar</div>
+                <div id="loadButton" class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+            </button>
+        </div>
+        <hr>
+
+        <div class="w3-container">
+            <h5>Users</h5>
+            <table id="tableUser" class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white"></table>
+        </div>
+
+        <!-- End page content -->
+    </div>
+
+    <script>
+        // Get the Sidebar
+        var mySidebar = document.getElementById("mySidebar");
+
+        // Get the DIV with overlay effect
+        var overlayBg = document.getElementById("myOverlay");
+
+        // Toggle between showing and hiding the sidebar, and add overlay effect
+        function w3_open() {
+            if (mySidebar.style.display === 'block') {
+                mySidebar.style.display = 'none';
+                overlayBg.style.display = "none";
+            } else {
+                mySidebar.style.display = 'block';
+                overlayBg.style.display = "block";
+            }
+        }
+
+        // Close the sidebar with the close button
+        function w3_close() {
+            mySidebar.style.display = "none";
+            overlayBg.style.display = "none";
+        }
+
+        $(document).ready(function () {
+            $('#loadButton').hide();
+            $("#submit").click(function () {
+                var nome = $("#CadastroNome").val();
+                var email = $("#CadastroEmail").val();
+                var senha = $("#CadastroSenha").val();
+                var roleId = $("#CadastroRole").val();
+
+                if (nome == null || nome == '' || email == null || email == '' || senha == null || senha == '') {
+                    alert("todos os campos devem ser preenchidos");
+                    return;
+                }
+
+                $('#cadastrarButtonText').hide();
+                $('#loadButton').show();
+
+                $.ajax({
+                    type: 'POST',
+                    url: 'http://localhost:50872/api/values',
+                    data: '{ "Name":"' + nome + '","Email":"' + email + '","Password":"' + senha + '","IsAdmin": ' + false + ', "IsActive":' + true + ', "RoleId": ' + roleId + '}',
+                    contentType: "application/json",
+                    dataType: 'json'
+                })
+                    .always(function (data) {
+                        $('#cadastrarButtonText').show();
+                        $('#loadButton').hide();
+                        if (data.status == 200) {
+                            getAllUsers();
+                            alert("usuário criado com sucesso");
+                            $("#CadastroNome").val("");
+                            $("#CadastroEmail").val("");
+                            $("#CadastroSenha").val("");
+                            $("#CadastroRole").val("");
+                        }
+                        if (data.status == 400) {
+                            alert("Erro: " + data.responseJSON.Message);
+                            console.log(data);
+                        }
+                    });
+            });
+            getRoles();
+            getAllUsers();
+        });
+
+        function getAllUsers() {
+            $.ajax({
+                type: 'GET',
+                url: 'http://localhost:50872/api/values',
+                contentType: "application/json",
+                dataType: 'json'
+            })
+                .always(function (data) {
+                    if (data.status == 400) {
+                        alert("erro: " + data.responseJSON.Message);
+                        console.log(data);
+                        return
+                    }
+                    var tabledata = "";
+                    for (var i = 0; i < data.length; i++) {
+                        if (data[i].isAdmin) {
+                            tabledata = tabledata + '<tr><td>' + data[i].name + ' (Admin)</td><td style="text-align:center">';
+                            tabledata = tabledata + '<button id="deleteUser' + data[i].id + '" class="deleteButton w3-button w3-dark-grey w3-disabled" disabled>Delete</button>';
+                        }
+                        else {
+                            tabledata = tabledata + '<tr><td>' + data[i].name + '</td><td style="text-align:center">';
+                            tabledata = tabledata + '<button onclick="javascript:Delete(' + data[i].id + ')" id="deleteUser' + data[i].id + '" class="deleteButton w3-button w3-dark-grey">Delete</button>';
+                        }
+                        tabledata = tabledata + ' <button id="editUser' + data[i].id + '" class="w3-button w3-dark-grey">Editar</button></td></tr>'
+                    }
+
+                    $('#tableUser').html(tabledata);
+
+                    if (data.status == 200) {
+                        console.log(data);
+                    }
+
+                });
+
+        }
+
+        function getRoles() {
+            $.ajax({
+                type: 'GET',
+                url: 'http://localhost:50872/api/values/getRoles',
+                contentType: "application/json",
+                dataType: 'json'
+            })
+                .always(function (data) {
+                    console.log(data);
+                    if (data.status == 400) {
+                        alert("erro ao pegar roles: " + data.responseJSON.Message);
+                        console.log(data);
+                        return
+                    }
+                    var selectDiv = "";
+                    for (var i = 0; i < data.length; i++) {
+                        selectDiv = selectDiv + '<option value="' + data[i].id + '">' + data[i].description + '</option>';
+                    }
+
+                    $('#CadastroRole').html(selectDiv);
+
+                    if (data.status == 200) {
+                        console.log(data);
+                    }
+
+                });
+
+        }
+
+
+        function Delete(userId) {
+            $('#loadButton').show();
+            $('#loadButton').show();
+            $.ajax({
+                type: 'DELETE',
+                url: 'http://localhost:50872/api/values/' + userId,
+                contentType: "application/json",
+                dataType: 'json'
+            })
+                .always(function (data) {
+                    $('#loadButton').hide();
+                    getAllUsers();
+                    if (data.status == 200) {
+                        alert("user deletado com sucesso");
+                        console.log(data);
+                    }
+                    if (data.status == 400) {
+                        alert("erro: " + data.responseJSON.Message);
+                        console.log(data);
+                        return
+                    }
+                });
+        }
+
+
+    </script>
+
+</body>
+</html>

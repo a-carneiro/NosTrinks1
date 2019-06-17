@@ -1,0 +1,14 @@
+D:\Pessoal\NosTrinks\NosTrinks\src\NosTrinks.Context\bin\Debug\netcoreapp2.1\NosTrinks.Context.deps.json
+D:\Pessoal\NosTrinks\NosTrinks\src\NosTrinks.Context\bin\Debug\netcoreapp2.1\NosTrinks.Context.dll
+D:\Pessoal\NosTrinks\NosTrinks\src\NosTrinks.Context\bin\Debug\netcoreapp2.1\NosTrinks.Context.pdb
+D:\Pessoal\NosTrinks\NosTrinks\src\NosTrinks.Context\bin\Debug\netcoreapp2.1\NosTrinks.Domain.dll
+D:\Pessoal\NosTrinks\NosTrinks\src\NosTrinks.Context\bin\Debug\netcoreapp2.1\NosTrinks.Domain.pdb
+D:\Pessoal\NosTrinks\NosTrinks\src\NosTrinks.Context\obj\Debug\netcoreapp2.1\NosTrinks.Context.csprojAssemblyReference.cache
+D:\Pessoal\NosTrinks\NosTrinks\src\NosTrinks.Context\obj\Debug\netcoreapp2.1\NosTrinks.Context.csproj.CoreCompileInputs.cache
+D:\Pessoal\NosTrinks\NosTrinks\src\NosTrinks.Context\obj\Debug\netcoreapp2.1\NosTrinks.Context.AssemblyInfoInputs.cache
+D:\Pessoal\NosTrinks\NosTrinks\src\NosTrinks.Context\obj\Debug\netcoreapp2.1\NosTrinks.Context.AssemblyInfo.cs
+D:\Pessoal\NosTrinks\NosTrinks\src\NosTrinks.Context\obj\Debug\netcoreapp2.1\NosTrinks.Context.csproj.CopyComplete
+D:\Pessoal\NosTrinks\NosTrinks\src\NosTrinks.Context\obj\Debug\netcoreapp2.1\NosTrinks.Context.dll
+D:\Pessoal\NosTrinks\NosTrinks\src\NosTrinks.Context\obj\Debug\netcoreapp2.1\NosTrinks.Context.pdb
+D:\Pessoal\NosTrinks\NosTrinks\src\NosTrinks.Context\bin\Debug\netcoreapp2.1\NosTrinks.Context.runtimeconfig.json
+D:\Pessoal\NosTrinks\NosTrinks\src\NosTrinks.Context\bin\Debug\netcoreapp2.1\NosTrinks.Context.runtimeconfig.dev.json

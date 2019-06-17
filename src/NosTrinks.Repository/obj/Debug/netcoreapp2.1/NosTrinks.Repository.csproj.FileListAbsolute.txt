@@ -1,0 +1,16 @@
+D:\Pessoal\NosTrinks\NosTrinks\src\NosTrinks.Repository\bin\Debug\netcoreapp2.1\NosTrinks.Repository.deps.json
+D:\Pessoal\NosTrinks\NosTrinks\src\NosTrinks.Repository\bin\Debug\netcoreapp2.1\NosTrinks.Repository.dll
+D:\Pessoal\NosTrinks\NosTrinks\src\NosTrinks.Repository\bin\Debug\netcoreapp2.1\NosTrinks.Repository.pdb
+D:\Pessoal\NosTrinks\NosTrinks\src\NosTrinks.Repository\bin\Debug\netcoreapp2.1\NosTrinks.Context.dll
+D:\Pessoal\NosTrinks\NosTrinks\src\NosTrinks.Repository\bin\Debug\netcoreapp2.1\NosTrinks.Domain.dll
+D:\Pessoal\NosTrinks\NosTrinks\src\NosTrinks.Repository\bin\Debug\netcoreapp2.1\NosTrinks.Interface.dll
+D:\Pessoal\NosTrinks\NosTrinks\src\NosTrinks.Repository\bin\Debug\netcoreapp2.1\NosTrinks.Context.pdb
+D:\Pessoal\NosTrinks\NosTrinks\src\NosTrinks.Repository\bin\Debug\netcoreapp2.1\NosTrinks.Interface.pdb
+D:\Pessoal\NosTrinks\NosTrinks\src\NosTrinks.Repository\bin\Debug\netcoreapp2.1\NosTrinks.Domain.pdb
+D:\Pessoal\NosTrinks\NosTrinks\src\NosTrinks.Repository\obj\Debug\netcoreapp2.1\NosTrinks.Repository.csprojAssemblyReference.cache
+D:\Pessoal\NosTrinks\NosTrinks\src\NosTrinks.Repository\obj\Debug\netcoreapp2.1\NosTrinks.Repository.csproj.CoreCompileInputs.cache
+D:\Pessoal\NosTrinks\NosTrinks\src\NosTrinks.Repository\obj\Debug\netcoreapp2.1\NosTrinks.Repository.AssemblyInfoInputs.cache
+D:\Pessoal\NosTrinks\NosTrinks\src\NosTrinks.Repository\obj\Debug\netcoreapp2.1\NosTrinks.Repository.AssemblyInfo.cs
+D:\Pessoal\NosTrinks\NosTrinks\src\NosTrinks.Repository\obj\Debug\netcoreapp2.1\NosTrinks.Repository.csproj.CopyComplete
+D:\Pessoal\NosTrinks\NosTrinks\src\NosTrinks.Repository\obj\Debug\netcoreapp2.1\NosTrinks.Repository.dll
+D:\Pessoal\NosTrinks\NosTrinks\src\NosTrinks.Repository\obj\Debug\netcoreapp2.1\NosTrinks.Repository.pdb

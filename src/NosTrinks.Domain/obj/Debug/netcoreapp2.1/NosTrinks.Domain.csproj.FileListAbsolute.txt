@@ -1,0 +1,8 @@
+D:\Pessoal\NosTrinks\NosTrinks\src\NosTrinks.Domain\bin\Debug\netcoreapp2.1\NosTrinks.Domain.deps.json
+D:\Pessoal\NosTrinks\NosTrinks\src\NosTrinks.Domain\bin\Debug\netcoreapp2.1\NosTrinks.Domain.dll
+D:\Pessoal\NosTrinks\NosTrinks\src\NosTrinks.Domain\bin\Debug\netcoreapp2.1\NosTrinks.Domain.pdb
+D:\Pessoal\NosTrinks\NosTrinks\src\NosTrinks.Domain\obj\Debug\netcoreapp2.1\NosTrinks.Domain.csproj.CoreCompileInputs.cache
+D:\Pessoal\NosTrinks\NosTrinks\src\NosTrinks.Domain\obj\Debug\netcoreapp2.1\NosTrinks.Domain.AssemblyInfoInputs.cache
+D:\Pessoal\NosTrinks\NosTrinks\src\NosTrinks.Domain\obj\Debug\netcoreapp2.1\NosTrinks.Domain.AssemblyInfo.cs
+D:\Pessoal\NosTrinks\NosTrinks\src\NosTrinks.Domain\obj\Debug\netcoreapp2.1\NosTrinks.Domain.dll
+D:\Pessoal\NosTrinks\NosTrinks\src\NosTrinks.Domain\obj\Debug\netcoreapp2.1\NosTrinks.Domain.pdb
